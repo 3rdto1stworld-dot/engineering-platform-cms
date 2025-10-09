@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "order_counters",
+  "info": {
+    "singularName": "order-counter",
+    "pluralName": "order-counters",
+    "displayName": "OrderCounter"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "lastNumber": {
+      "type": "integer"
+    }
+  }
+}

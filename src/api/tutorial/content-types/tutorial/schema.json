@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tutorials",
+  "info": {
+    "singularName": "tutorial",
+    "pluralName": "tutorials",
+    "displayName": "Tutorial"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "youtubeUrl": {
+      "type": "string"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category",
+      "inversedBy": "tutorial"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "inversedBy": "tutorials"
+    }
+  }
+}

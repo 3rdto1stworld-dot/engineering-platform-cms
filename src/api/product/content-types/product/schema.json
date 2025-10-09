@@ -12,10 +12,40 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "price": {
       "type": "decimal"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "hasCAD": {
+      "type": "boolean",
+      "default": false
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category",
+      "mappedBy": "product"
+    },
+    "tutorials": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tutorial.tutorial",
+      "mappedBy": "products"
     }
   }
 }
