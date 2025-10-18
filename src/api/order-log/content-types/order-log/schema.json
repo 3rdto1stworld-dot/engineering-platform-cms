@@ -18,7 +18,7 @@
     "timestamp": {
       "type": "datetime"
     },
-    "products": {
+    "productsId": {
       "type": "json"
     },
     "totalPrice": {
@@ -33,6 +33,12 @@
       "relation": "oneToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "order_log"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "mappedBy": "order_logs"
     }
   }
 }

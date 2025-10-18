@@ -584,7 +584,8 @@ export interface ApiOrderLogOrderLog extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     orderId: Schema.Attribute.String & Schema.Attribute.Required;
-    products: Schema.Attribute.JSON;
+    products: Schema.Attribute.Relation<'manyToMany', 'api::product.product'>;
+    productsId: Schema.Attribute.JSON;
     publishedAt: Schema.Attribute.DateTime;
     timestamp: Schema.Attribute.DateTime;
     totalPrice: Schema.Attribute.Decimal;
@@ -622,6 +623,10 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       'api::product.product'
     > &
       Schema.Attribute.Private;
+    order_logs: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::order-log.order-log'
+    >;
     price: Schema.Attribute.Decimal;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String & Schema.Attribute.Required;

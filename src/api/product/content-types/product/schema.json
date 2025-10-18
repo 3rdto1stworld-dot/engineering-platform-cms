@@ -46,6 +46,12 @@
       "relation": "manyToMany",
       "target": "api::tutorial.tutorial",
       "mappedBy": "products"
+    },
+    "order_logs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::order-log.order-log",
+      "inversedBy": "products"
     }
   }
 }
